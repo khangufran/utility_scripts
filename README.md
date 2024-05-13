@@ -10,4 +10,5 @@ if [ -d $HOME/utility_scripts ]; then
         done
 fi
 EOF
+. ${HOME}/.${SHELL##*/}rc
 
