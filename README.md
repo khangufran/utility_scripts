@@ -3,7 +3,7 @@ Add in bashrc or zshrc
 git clone git@github.com:khangufran/utility_scripts.git $HOME/utility_scripts
 cat >>  ${HOME}/.${SHELL##*/}rc << EOF
 
-# Utility functions and aliases from central scripts
+# Utility functions and aliases from https://github.com/khangufran/utility_scripts
 if [ -d $HOME/utility_scripts ]; then
         for file in $HOME/utility_scripts/*sh; do
                 . \$file
