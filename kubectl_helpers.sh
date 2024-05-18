@@ -54,3 +54,17 @@ function kgp() {
 		fi
         fi
 }
+
+function kforward() {
+        if [ "$#" -le 1 ]; then
+                echo "Command: kubectl port-forward $1 $2 [-n \$3]{default: active namespace} | less"
+        else
+                if [ "$#" -eq 2 ]; then
+                    kubectl port-forward $1 $2
+                else
+                    kubectl port-forward $1 $2 -n $3
+		fi
+        fi
+}
+
+
