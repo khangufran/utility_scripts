@@ -69,7 +69,7 @@ function kforward() {
 
 function klogs() {
         if [ "$#" -eq 0 ]; then
-                echo "Command: kubectl logs -n \$2 -l app.kubernetes.io/name=\$(k get pods -o json \$1 -n \$2 | jq -r '.metadata.labels."app.kubernetes.io/name"') -f --tail 100 --max-log-requests=50"
+                echo "Command: kubectl logs -n \$2 -l app.kubernetes.io/name=\$(k get pods -o json \$1 -n \$2 | jq -r '.metadata.labels.\"app.kubernetes.io/name\"') -f --tail 100 --max-log-requests=50"
         else
                 if [ "$#" -eq 1 ]; then
 			kubectl logs -l app.kubernetes.io/name=$(k get pods -o json $1| jq -r '.metadata.labels."app.kubernetes.io/name"') -f --tail 100 --max-log-requests=50
