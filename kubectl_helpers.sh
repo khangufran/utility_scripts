@@ -78,3 +78,37 @@ function klogs() {
 		fi
         fi
 }
+
+function kgcmg() {
+        if [ "$#" -eq 0 ]; then
+                echo "Command: kubectl get cm -A | grep \$1"
+        else
+                kubectl get cm -A | grep $1
+        fi
+}
+
+function kgcm() {
+        if [ "$#" -eq 0 ]; then
+                echo "Command: kubectl get cm -o json \$1 [-n \$2]{default: active namespace} | jq '.data'"
+        else
+            if [ "$#" -eq 1 ]; then
+                kubectl get cm -o json $1 | jq '.data'
+            else
+                kubectl get cm -o json $1 -n $2 | jq '.data'
+		fi
+        fi
+}
+
+function kgcmv() {
+        if [ "$#" -le 1 ]; then
+                echo "Command: kubectl get cm -o json \$1 [-n \$3]{default: active namespace} | jq '.data' | grep $2"
+        else
+            if [ "$#" -eq 2 ]; then
+                kubectl get cm -o json $1 | jq '.data' | grep $2
+            else
+                kubectl get cm -o json $1 -n $3 | jq '.data' | grep $2
+		fi
+        fi
+}
+
+
