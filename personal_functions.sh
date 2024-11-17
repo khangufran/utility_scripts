@@ -22,3 +22,5 @@ function important_details() {
 function proton_extract() {
     #TODO   
 }
+
+alias venv="source ./venv/bin/activate"
