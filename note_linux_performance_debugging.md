@@ -16,8 +16,8 @@
 **Most Probable Reason** If first steps don't show anything maybe issue doesn't exist and problem is with applications logic or physical limitations of hardware itself
 
 **Checklist before starting to debug**
-[] What makes you think there is a performance problem?
-[] Has this system ever performed well?
-[] What has changed recently? (Software? Hardware? Load?)
-[] Does the problem affect other people or just a single person?
-[] What is the physical configuration of system? What are the limits of hardware?
+- [ ] What makes you think there is a performance problem?
+- [ ] Has this system ever performed well?
+- [ ] What has changed recently? (Software? Hardware? Load?)
+- [ ] Does the problem affect other people or just a single person?
+- [ ] What is the physical configuration of system? What are the limits of hardware?
