@@ -9,3 +9,15 @@
 8. sar -n DEV 1 : to check network metrics and if any limit is being reached here
 9. sar -n TCP,ETCP 1 : to check tcp stats
 10. top : (press E to make all memory shown in mb)
+
+# How to approach, what should be first step
+**Problem** My system is slow, I need to find the reason
+
+**Most Probable Reason** If first steps don't show anything maybe issue doesn't exist and problem is with applications logic or physical limitations of hardware itself
+
+**Checklist before starting to debug**
+[] What makes you think there is a performance problem?
+[] Has this system ever performed well?
+[] What has changed recently? (Software? Hardware? Load?)
+[] Does the problem affect other people or just a single person?
+[] What is the physical configuration of system? What are the limits of hardware?
