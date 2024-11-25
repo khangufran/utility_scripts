@@ -4,7 +4,10 @@
 
 export PTH='/mnt/c/Users/khhan/Downloads/elden_ring'
 mkdir -p $PTH
-FILE=$(cat urls)
+if [ -e urls ]; then
+	FILE=$(cat urls)
+fi
+	
 for line in $FILE; do
 	FILENAME=$(echo "$line" | cut -d '#' -f 2)
 	DOWNLOADURL=$(curl -Ls $line | grep '"https://fuckingfast.co/dl' | sed -n 's/.*window\.open("\(.*\)".*/\1/p')
