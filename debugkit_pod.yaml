@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: deleteme-debugkit-bygufran
+  namespace: prod
+  labels:
+    app: debugkit
+spec:
+  containers:
+  - name: debugkit
+    image: khangufran/debugkit:latest
+    command: ["/bin/bash", "-c", "--"]
+    args: ["while true; do sleep 30; done"]
+    tty: true
+    stdin: true
+    resources:
+      requests:
+        memory: "128Mi"
+        cpu: "100m"
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
+  restartPolicy: Never
+
